@@ -5,7 +5,7 @@ hROI = c(1,2,3,4,5,6,7,8,9,10)
 #hROI = c(21,22,23,24,25,26,27,28,29,30)
 #hROI = c(31,32,33,34)
 
-csv.path = "/Users/ninad/Documents/_CBR/Scripts/Recurrence plots/CSV files/DM1_healthy_MI.csv"
+csv.path = "/Users/ninad/Documents/_CBR/Scripts/Recurrence plots/CSV files/DM1_healthy.csv"
 
 hdir <- "/Users/ninad/Documents/_CBR/Data/ROI CSV files/default_mode_ts/healthy"
 hfiles <- list.files(hdir, pattern = ".csv", full.names = TRUE)
@@ -42,7 +42,7 @@ for (file_path in hfiles) {
     # Try to estimate embedding dimension and time lag
     tryCatch(
       {
-        tau.acf <- timeLag(time_series, technique = "ami", selection.method = "first.minimum", lag.max = NULL, do.plot = FALSE)
+        tau.acf <- timeLag(time_series, technique = "acf", selection.method = "first.minimum", lag.max = NULL, do.plot = FALSE)
         emb_dim <- estimateEmbeddingDim(time_series, time.lag = tau.acf, max.embedding.dim = 15, do.plot = FALSE)
         subject_name <- basename(file_path)
         results_df <- rbind(results_df, c(subject_name, ROI, emb_dim, tau.acf))
