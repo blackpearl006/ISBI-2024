@@ -1,11 +1,11 @@
 suppressMessages(library('nonlinearTseries'))
 
-#mROI = c(1,2,3,4,5,6,7,8,9,10) 
+mROI = c(1,2,3,4,5,6,7,8,9,10) 
 #mROI = c(11,12,13,14,15,16,17,18,19,20) 
 #mROI = c(21,22,23,24,25,26,27,28,29,30)
-mROI = c(31,32,33,34)
+#mROI = c(31,32,33,34)
 
-csv.path = "/Users/ninad/Documents/_CBR/Scripts/Recurrence plots/CSV files/DM4_mci.csv"
+csv.path = "/Users/ninad/Documents/_CBR/Scripts/Recurrence plots/CSV files/DM1_mci.csv"
 
 mdir <- "/Users/ninad/Documents/_CBR/Data/ROI CSV files/default_mode_ts/mci"
 mfiles <- list.files(mdir, pattern = ".csv", full.names = TRUE)
